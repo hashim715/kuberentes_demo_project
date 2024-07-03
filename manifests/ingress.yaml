@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: demo_app_ingress
+  name: demo-app-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: my_ip_address
+    - host: ip172-18-0-16-cq2io98i7hog00c6ckt0.direct.labs.play-with-k8s.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: demo_app_service
+                name: demo-app-service
                 port:
                   number: 5000
